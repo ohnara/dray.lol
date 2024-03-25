@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="dray.lol"/>
+    <meta property="og:description" content="Buy me a coffee?"/>
+    <meta property="og:url" content="https://dray.lol/"/>
+    <meta property="og:image" content="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzE0YjA0M2p2NDBvYzk3d2YxNzB0dzgya2psbGwzY21yZWN3emhpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/41omoz6ZDXKxTvANtt/giphy-downsized-large.gif"/>
+    <title>dray.lol</title>
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/ocr-a-std">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/yulong">
+    <style>
+        body {
+            background-color: black;
+        }
+        .popup { 
+            position: fixed;
+            z-index: 1;
+            margin-left: 1%;
+            border: 1px solid black;
+            opacity: 99%;
+        }
+        .enter {
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-family: 'OCR A Std', sans-serif;
+            z-index: 0;
+            margin-right: 20%;
+            animation: user 1s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <h2></h2>
+        <p class="enter">click to enter</p>
+        <button id="button"></button>
+    </div>
+    <video id="vidauto" muted autoplay loop src="MP4/eem.mp3" controls style="width: 0%; height: 950px;"></video>
+    <script>
+        const acceptButton = document.getElementById('button');
+        const popup = document.getElementById('popup');
+
+        acceptButton.addEventListener('click', function() {
+            const video = document.getElementById('vidauto');
+            video.muted = false;
+            popup.style.display = 'none';
+        });
+    </script>
+    <img loop id="bk" src="MP4/charon walk.gif" alt="Charon walking">
+    <img id="dot" src="MP4/dot.png" alt="Dot image">
+    <h1 id="username">dray</h1>
+    <a href="https://twitch.tv/draylovesher"> 
+        <img id="twitch" src="MP4/twitch.png" alt="Twitch logo">
+    </a>
+    <button id="bitcoin" class="copy-bttn" onclick="copyToClipboard()" title="Copy to Clipboard">
+        <img id="bitcoin" src="MP4/bitcoin.png" alt="Bitcoin logo">
+    </button>
+    <span id="btcc">Successfully Copied</span>
+    <script src="script.js"></script>
+    <a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA"> 
+        <img id="youtube" src="MP4/youtube.png" alt="YouTube logo">
+    </a>
+</body>
+</html>

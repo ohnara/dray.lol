@@ -1,0 +1,306 @@
+/* glow effect */
+
+@keyframes enter {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes ttv {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+@keyframes user {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #000000, 0 0 10px #ffffff, 0 0 20px #000000, 0 0 50px #fff3f3, 0 0 60px #000000, 0 0 70px #fffbfb;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #000000, 0 0 20px #fff0f0, 0 0 50px #000000, 0 0 60px #fff5f5, 0 0 70px #000000, 0 0 80px #000000;
+  }
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    font-family: Arial, sans-serif; /* Define a fallback font */
+}
+
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#bk {
+  position: fixed;
+   right: 0;
+   bottom: 0;
+   min-width: 100%; 
+   min-height: 100%;
+   opacity: 100;
+   z-index: -1;
+   filter: brightness(100%);
+}
+#dot {
+  position: fixed;
+   right: 0;
+   bottom: 0;
+   min-width: 100%; 
+   min-height: 100%;
+   opacity: 1;
+   z-index: -1;
+   white-space: nowrap;
+
+}
+#dot {
+    background: transparent url(MP4/dot.png) repeat 0 0
+}
+
+#username {
+  align-items: center;
+  margin-left: 47.5vw; /* Adjust as needed */
+  margin-top: 35vh; /* Adjust as needed */
+  font-family: 'yulong', sans-serif;
+  font-size: 3vw; /* Responsive font size */
+  color: #000000;
+  position: fixed;
+  animation: user 1s ease-in-out infinite alternate;
+  white-space: nowrap;
+}
+
+/* Example media query for smaller screens */
+@media screen and (max-width: 640px) {
+  #username {
+    margin-left: 5vw; /* Adjust as needed for smaller screens */
+    margin-top: 5vh; /* Adjust as needed for smaller screens */
+    font-size: 2.5vw; /* Adjust font size for smaller screens */
+  }
+}
+#twitch {
+  width: 2vw;
+  height: 3.7vh;
+  margin-left: 50.8vw;
+  margin-top: 41vh;
+  position: fixed;
+  animation: ttv 1s ease-in-out infinite alternate;
+ 
+}
+#bitcoin {
+  width: 2vw;
+  height: 3.7vh;
+  margin-left: 23.81vw;
+  margin-top: 19.5vh;
+  position: fixed;
+  animation: btc 1s ease-in-out infinite alternate;
+ 
+}
+#youtube {
+  width: 2vw;
+  height: 3.7vh;
+  margin-left: 46.4vw;
+  margin-top: 41vh;
+  position: fixed;
+  animation: yt 1s ease-in-out infinite alternate;
+ 
+}
+#bio {
+  margin-left: 45%;
+  margin-top: 41vh;
+  font-family:monospace;
+  font-size: 1.25vw;
+  position: fixed;
+  animation: user 1s ease-in-out infinite alternate;
+}
+#body {
+  background-color: #000;
+}
+#popup {
+  position: fixed;
+  top: 95vh;
+  left: 95vw;
+  transform: translate(-50%, -50%);
+  background-color:#000;
+  z-index: 9999;
+  padding: 100%;
+  height:100%;
+  width:100%;
+ border: 1px solid black;
+}
+#vidauto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+/* Style buttons */
+#button {
+  background-color: transparent;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-size: 35px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  font-family: 'OCR A Std', sans-serif;
+   position: fixed;
+  top: 95vh;
+  left: 95vw;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height:100%;
+  width:100;
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+@media screen and (max-width: 640px) {
+  #button {
+    margin-left: 5vw; /* Adjust as needed for smaller screens */
+    margin-top: 5vh; /* Adjust as needed for smaller screens */
+    font-size: 2.5vw; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Darker background on mouse-over */
+#btn:hover {
+  background-color: transparent
+}
+.copy-bttn {
+  border: none;
+  background: none;
+}
+
+.copy-bttn img {
+  width: 30px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+}
+#btcc {
+  visibility: hidden;
+  color: #fff;
+  background-color: transparent;
+  min-width: 250px;
+  margin-left: -137px;
+  padding: 16px;
+  text-align: center;
+  left: 50%;
+  bottom: 30px;
+  z-index: 1;
+  position: fixed;
+}
+
+/* This will be activated when the snackbar's class is 'show' which will be added through JS */
+#btcc.show {
+  visibility: visible;
+  -moz-animation-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  font-family: 'yulong', sans-serif;
+}
+
+/* Animations for fading in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
