@@ -1,34 +1,10 @@
 /* glow effect */
-
-@keyframes enter {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-}
-
-@keyframes ttv {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-}
-
-
 @keyframes user {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 10px #000000, 0 0 10px #ffffff, 0 0 20px #000000, 0 0 50px #fff3f3, 0 0 60px #000000, 0 0 70px #fffbfb;
+    text-shadow: 0 0 5px #fff,  0 0 5px #fff, 0 0 8px #000000, 0 0 8px #000000, 0 0 11px #fff, 0 0 11px #fff, 0 0 14px #000000, 0 0 14px #000000, 0 0 17px #fff, 0 0 17px #fff, 0 0 20px #000000, 0 0 20px #000000;
   }
   
-  to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #000000, 0 0 20px #fff0f0, 0 0 50px #000000, 0 0 60px #fff5f5, 0 0 70px #000000, 0 0 80px #000000;
-  }
+
 }
 
 
@@ -105,7 +81,7 @@ table {
   overflow-y: hidden;
 }
 #bk {
-  position: fixed;
+  position: absolute;
    right: 0;
    bottom: 0;
    min-width: 100%; 
@@ -115,7 +91,7 @@ table {
    filter: brightness(100%);
 }
 #dot {
-  position: fixed;
+  position: absolute;
    right: 0;
    bottom: 0;
    min-width: 100%; 
@@ -136,7 +112,7 @@ table {
   font-family: 'yulong', sans-serif;
   font-size: 3vw; /* Responsive font size */
   color: #000000;
-  position: fixed;
+  position: absolute;
   animation: user 1s ease-in-out infinite alternate;
   white-space: nowrap;
 }
@@ -152,27 +128,27 @@ table {
 #twitch {
   width: 2vw;
   height: 3.7vh;
-  margin-left: 50.8vw;
-  margin-top: 41vh;
-  position: fixed;
+  margin-left: 50.7vw;
+  margin-top: 41.2vh;
+  position: absolute;
   animation: ttv 1s ease-in-out infinite alternate;
- 
+  
 }
 #bitcoin {
-  width: 2vw;
+  width: 2.1vw;
   height: 3.7vh;
-  margin-left: 23.81vw;
-  margin-top: 19.5vh;
-  position: fixed;
+  margin-left: 24.31vw;
+  margin-top: 20.5vh;
+  position: absolute;
   animation: btc 1s ease-in-out infinite alternate;
  
 }
 #youtube {
   width: 2vw;
   height: 3.7vh;
-  margin-left: 46.4vw;
+  margin-left: 46.5vw;
   margin-top: 41vh;
-  position: fixed;
+  position: absolute;
   animation: yt 1s ease-in-out infinite alternate;
  
 }
@@ -181,23 +157,24 @@ table {
   margin-top: 41vh;
   font-family:monospace;
   font-size: 1.25vw;
-  position: fixed;
+  position: absolute;
   animation: user 1s ease-in-out infinite alternate;
 }
 #body {
   background-color: #000;
 }
 #popup {
-  position: fixed;
+  
   top: 95vh;
   left: 95vw;
   transform: translate(-50%, -50%);
   background-color:#000;
-  z-index: 9999;
+  z-index: 1;
   padding: 100%;
   height:100%;
   width:100%;
- border: 1px solid black;
+  opacity: 100%;
+ 
 }
 #vidauto {
   position: absolute;
@@ -209,36 +186,16 @@ table {
   background-color: transparent;
   border: none; /* Remove borders */
   color: white; /* White text */
-  font-size: 35px; /* Set a font size */
+  font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
   font-family: 'OCR A Std', sans-serif;
-   position: fixed;
+   position: absolute;
   top: 95vh;
   left: 95vw;
   transform: translate(-50%, -50%);
   z-index: 1;
   height:100%;
-  width:100;
-}
-@keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-  
-  }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
+  width:100%;
 }
 @media screen and (max-width: 640px) {
   #button {
@@ -282,25 +239,4 @@ table {
   -moz-animation-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
   font-family: 'yulong', sans-serif;
-}
-
-/* Animations for fading in and out */
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
 }
