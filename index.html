@@ -1,65 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>dray.lol</title>
+<link rel="stylesheet" href="style.css?v=1.2">
+<script src="style.js?v=1.2"></script> 
 
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" type="image/jpg" href="MP4/favicon.jpg"/> 
+
+<style>
+body {
+  background-color: black;
+}
+
+/* POPUP FIXED */
+#popup { 
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: black;
+ z-index: 9999;
+}
+
+.enter {
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-family: 'OCR A Std', sans-serif;
+  margin-top: 50vh;
+  margin-left: 45vw;
+  animation: user 1.5s ease-in-out infinite alternate;
+}
+</style>
+
 </head>
 
-<body>
+<body> 
 
-<!-- INTRO OVERLAY -->
 <div id="popup">
-  <p class="enter">click to enter</p>
-  <button id="button"></button>
+    <p class="enter">click to enter</p>
+    <button id="button"></button>
 </div>
 
-<!-- BACKGROUND -->
-<img id="bk" src="MP4/charon walk.gif">
-<div id="noise"></div>
-
-<!-- MAIN CONTENT -->
-<div id="main" class="hidden">
-
-  <h1 id="username">dray</h1>
-
-  <div class="icons">
-    <a href="https://twitch.tv/draylovesher">
-      <img src="MP4/twitch.png">
-    </a>
-
-    <a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA">
-      <img src="MP4/youtube.png">
-    </a>
-  </div>
-
-</div>
-
-<!-- AUDIO -->
+<!-- AUDIO FIX (replaces broken video) -->
 <audio id="audio" loop>
   <source src="MP4/eem.mp3" type="audio/mpeg">
 </audio>
 
+<img id="bk" src="MP4/charon walk.gif">
+<img id="dot" src="MP4/dot.png">
+
+<h1 id="username">dray</h1>
+
+<a href="https://twitch.tv/draylovesher"> 
+   <img id="twitch" src="MP4/twitch.png">
+</a>
+
+<a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA"> 
+    <img id="youtube" src="MP4/youtube.png">
+</a>
+
+<bttc id="bitcoin" class="copy-bttn" onclick="copyToClipboard()">
+    <img src="MP4/bitcoin.png">
+</bttc>
+
+<span id="btcc">Successfully Copied</span>
+
+<script src="script.js"></script>
+
 <script>
-const btn = document.getElementById('button');
+const acceptButton = document.getElementById('button');
 const popup = document.getElementById('popup');
 const audio = document.getElementById('audio');
-const main = document.getElementById('main');
 
-btn.addEventListener('click', () => {
-  audio.play(); // mobile-safe
-  popup.style.opacity = '0';
-
-  setTimeout(() => {
+acceptButton.addEventListener('click', function() {
+    audio.play(); // ✅ mobile-safe autoplay
     popup.style.display = 'none';
-    main.classList.remove('hidden');
-    main.classList.add('fade-in');
-  }, 500);
 });
 </script>
 
-</body>
+</body> 
 </html>
