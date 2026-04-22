@@ -1,127 +1,31 @@
-/* BODY */
+/* STOP MOBILE SIDE SCROLL */
 body {
-  background: black;
-  overflow: hidden;
-  font-family: 'OCR A Std', sans-serif;
+  overflow-x: hidden;
 }
 
-/* BACKGROUND */
-#bk {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-
-  /* 🔥 RESTORED LOOK */
-  filter: brightness(60%) blur(2px);
+/* SMOOTHER ANIMATION */
+.enter, #username {
+  animation: user 1.5s ease-in-out infinite alternate;
 }
 
-/* NOISE OVERLAY */
-#noise {
-  position: fixed;
-  inset: 0;
-  background: url("MP4/dot.png");
-  opacity: 0.25;
-  z-index: -1;
-  animation: noiseMove 0.3s infinite;
-}
+/* MOBILE ADJUSTMENTS (keeps your layout style) */
+@media screen and (max-width: 640px) {
 
-/* USERNAME (MATCH YOUR POSITION BETTER) */
-#username {
-  position: absolute;
-  top: 35vh;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(24px, 3vw, 48px);
-  font-family: 'yulong', sans-serif;
-  color: black;
-  animation: glow 1s infinite alternate;
-  white-space: nowrap;
-}
-
-/* ICONS — MANUAL POSITIONING (LIKE YOUR ORIGINAL) */
-#twitch, #youtube {
-  position: absolute;
-  width: clamp(22px, 2vw, 40px);
-  height: auto;
-  animation: float 1s infinite alternate;
-}
-
-/* restore your spacing feel */
-#twitch {
-  top: 41vh;
-  left: 52vw;
-}
-
-#youtube {
-  top: 41vh;
-  left: 47vw;
-}
-
-/* POPUP */
-#popup {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-
-.enter {
-  color: white;
-  font-size: clamp(14px, 2vw, 20px);
-  font-family: 'OCR A Std', sans-serif;
-  animation: glow 1s infinite alternate;
-}
-
-/* BUTTON */
-#button {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-/* ANIMATIONS */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #000;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #000;
-  }
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-5px); }
-}
-
-@keyframes noiseMove {
-  from { transform: translate(0,0); }
-  to { transform: translate(-10%, -10%); }
-}
-
-/* 📱 MOBILE FIX WITHOUT BREAKING YOUR LAYOUT */
-@media (max-width: 600px) {
   #username {
-    top: 30vh;
+    margin-left: 42vw;
     font-size: 6vw;
   }
 
   #twitch {
-    top: 42vh;
-    left: 55vw;
+    margin-left: 55vw;
   }
 
   #youtube {
-    top: 42vh;
-    left: 40vw;
+    margin-left: 40vw;
   }
+
+  #bitcoin {
+    margin-left: 20vw;
+  }
+
 }
