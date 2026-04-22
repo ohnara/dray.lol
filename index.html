@@ -1,85 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scaleable=0">
-<link rel="stylesheet" href="style.css?=v1.1">
-<script src="style.js?=v1.1"></script> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" type="image/jpg" href="MP4/favicon.jpg"/> 
-<link href="https://fonts.cdnfonts.com/css/ocr-a-std" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/yulong" rel="stylesheet">
-<style>
-  
-body {
-  background-color: black;
-}
-.popup { 
- position: fixed;
- z-index: 9999;
- margin-left: 1%;
- border: 1px solid black;
- opacity: 99%;
- font-size: 5px;
-}
-.enter {
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  font-size: 15px; /* Set a font size */
-  font-family: 'OCR A Std', sans-serif;
-  z-index: 0;
-  margin-right: 20%;
-  animation: user 1s ease-in-out infinite alternate;
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css?v=1.2">
+<script defer src="style.js?v=1.2"></script> 
+
+<title>dray.lol</title>
 </head>
+
 <body> 
 
-<div class="popup" id="popup">
-    <h2></h2>
+<div id="popup">
     <p class="enter">click to enter</p>
     <button id="button"></button>
 </div>
-<body>
-    
-</body>
 
-<video id="vidauto" muted autoplay loop src="MP4/eem.mp3" controls width="0%" height="950px"></video>
+<video id="vidauto" muted autoplay loop src="MP4/eem.mp3"></video>
 
-<script>
-    const acceptButton = document.getElementById('button');
-    const popup = document.getElementById('popup');
+<img id="bk" src="MP4/charon walk.gif">
+<img id="dot" src="MP4/dot.png">
 
-
-    acceptButton.addEventListener('click', function() {
-        const video = document.getElementById('vidauto');
-
-        video.muted = false;
-
-        popup.style.display = 'none';
-    });
-</script>
-
-<img loop id="bk" src="MP4/charon walk.gif" alt="Charon walking">
-<img id="dot" src="MP4/dot.png" alt="Dot image">
 <h1 id="username">dray</h1>
 
-<a href="https://twitch.tv/draylovesher"> 
-   <img id="twitch" src="MP4/twitch.png" alt="Twitch logo">
+<a href="https://twitch.tv/draylovesher">
+   <img id="twitch" src="MP4/twitch.png">
 </a>
-<a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA"> 
-    <img id="youtube" src="MP4/youtube.png" alt="YouTube logo">
+
+<a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA">
+   <img id="youtube" src="MP4/youtube.png">
 </a>
-   </a>
-    <bttc id="bitcoin" class="copy-bttn" onclick="copyToClipboard()" title="Copy to Clipboard">
-        <img id="bitcoin" src="MP4/bitcoin.png" alt="Bitcoin logo">
-    </bttc>
-    <span id="btcc">Successfully Copied</span>
-    <script src="script.js"></script>
-    <a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA"> 
-        <img id="youtube" src="MP4/youtube.png" alt="YouTube logo">
-    </a>
 
-<title>dray.lol</title>
+<script>
+const btn = document.getElementById('button');
+const popup = document.getElementById('popup');
 
-</body> 
+btn.addEventListener('click', () => {
+  document.getElementById('vidauto').muted = false;
+  popup.style.display = 'none';
+});
+</script>
+
+</body>
 </html>
