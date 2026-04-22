@@ -1,18 +1,11 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* BODY */
 body {
   background: black;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+  font-family: 'OCR A Std', sans-serif;
 }
 
-/* BACKGROUND GIF */
+/* BACKGROUND */
 #bk {
   position: fixed;
   inset: 0;
@@ -20,44 +13,51 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -2;
+
+  /* 🔥 RESTORED LOOK */
+  filter: brightness(60%) blur(2px);
 }
 
-/* NOISE OVERLAY (GLITCH FEEL) */
+/* NOISE OVERLAY */
 #noise {
   position: fixed;
   inset: 0;
   background: url("MP4/dot.png");
-  opacity: 0.15;
+  opacity: 0.25;
   z-index: -1;
   animation: noiseMove 0.3s infinite;
 }
 
-/* CENTER CONTENT */
+/* USERNAME (MATCH YOUR POSITION BETTER) */
 #username {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(28px, 4vw, 60px);
-  color: black;
-  font-family: 'yulong', sans-serif;
-  animation: glow 1s infinite alternate;
-}
-
-/* ICONS */
-.icons {
-  position: absolute;
-  top: 52%;
+  top: 35vh;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: clamp(20px, 3vw, 50px);
+  font-size: clamp(24px, 3vw, 48px);
+  font-family: 'yulong', sans-serif;
+  color: black;
+  animation: glow 1s infinite alternate;
+  white-space: nowrap;
 }
 
-.icons img {
-  width: clamp(25px, 2.5vw, 45px);
-  cursor: pointer;
+/* ICONS — MANUAL POSITIONING (LIKE YOUR ORIGINAL) */
+#twitch, #youtube {
+  position: absolute;
+  width: clamp(22px, 2vw, 40px);
+  height: auto;
   animation: float 1s infinite alternate;
+}
+
+/* restore your spacing feel */
+#twitch {
+  top: 41vh;
+  left: 52vw;
+}
+
+#youtube {
+  top: 41vh;
+  left: 47vw;
 }
 
 /* POPUP */
@@ -72,14 +72,14 @@ body {
   transition: opacity 0.5s ease;
 }
 
-/* ENTER TEXT */
 .enter {
   color: white;
-  font-size: clamp(14px, 2vw, 22px);
+  font-size: clamp(14px, 2vw, 20px);
+  font-family: 'OCR A Std', sans-serif;
   animation: glow 1s infinite alternate;
 }
 
-/* FULL CLICK AREA */
+/* BUTTON */
 #button {
   position: absolute;
   inset: 0;
@@ -88,21 +88,7 @@ body {
   cursor: pointer;
 }
 
-/* FADE-IN CONTENT */
-.hidden {
-  opacity: 0;
-}
-
-.fade-in {
-  animation: fadeIn 1s forwards;
-}
-
 /* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes glow {
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #000;
@@ -114,7 +100,7 @@ body {
 
 @keyframes float {
   from { transform: translateY(0); }
-  to { transform: translateY(-6px); }
+  to { transform: translateY(-5px); }
 }
 
 @keyframes noiseMove {
@@ -122,13 +108,20 @@ body {
   to { transform: translate(-10%, -10%); }
 }
 
-/* MOBILE FIXES */
+/* 📱 MOBILE FIX WITHOUT BREAKING YOUR LAYOUT */
 @media (max-width: 600px) {
   #username {
-    top: 35%;
+    top: 30vh;
+    font-size: 6vw;
   }
 
-  .icons {
-    top: 50%;
+  #twitch {
+    top: 42vh;
+    left: 55vw;
+  }
+
+  #youtube {
+    top: 42vh;
+    left: 40vw;
   }
 }
