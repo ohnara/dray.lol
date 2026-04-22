@@ -1,242 +1,134 @@
-/* glow effect */
-@keyframes user {
-  from {
-    text-shadow: 0 0 5px #fff,  0 0 5px #fff, 0 0 8px #000000, 0 0 8px #000000, 0 0 11px #fff, 0 0 11px #fff, 0 0 14px #000000, 0 0 14px #000000, 0 0 17px #fff, 0 0 17px #fff, 0 0 20px #000000, 0 0 20px #000000;
-  }
-  
-
-}
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-body {
-    font-family: Arial, sans-serif; /* Define a fallback font */
-}
-
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-#body {
-  background-color: black;
+/* RESET */
+* {
   margin: 0;
   padding: 0;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  box-sizing: border-box;
 }
+
+/* BODY */
+body {
+  background: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* BACKGROUND GIF */
 #bk {
-  position: absolute;
-   right: 0;
-   bottom: 0;
-   min-width: 100%; 
-   min-height: 100%;
-   opacity: 100;
-   z-index: -1;
-   filter: brightness(100%);
-}
-#dot {
-  position: absolute;
-   right: 0;
-   bottom: 0;
-   min-width: 100%; 
-   min-height: 100%;
-   opacity: 1;
-   z-index: -1;
-   white-space: nowrap;
-
-}
-#dot {
-    background: transparent url(MP4/dot.png) repeat 0 0
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
+/* NOISE OVERLAY (GLITCH FEEL) */
+#noise {
+  position: fixed;
+  inset: 0;
+  background: url("MP4/dot.png");
+  opacity: 0.15;
+  z-index: -1;
+  animation: noiseMove 0.3s infinite;
+}
+
+/* CENTER CONTENT */
 #username {
-  align-items: center;
-  margin-left: 47.5vw; /* Adjust as needed */
-  margin-top: 35vh; /* Adjust as needed */
-  font-family: 'yulong', sans-serif;
-  font-size: 3vw; /* Responsive font size */
-  color: #000000;
   position: absolute;
-  animation: user 1s ease-in-out infinite alternate;
-  white-space: nowrap;
-}
-
-/* Example media query for smaller screens */
-@media screen and (max-width: 640px) {
-  #username {
-    margin-left: 5vw; /* Adjust as needed for smaller screens */
-    margin-top: 5vh; /* Adjust as needed for smaller screens */
-    font-size: 2.5vw; /* Adjust font size for smaller screens */
-  }
-}
-#twitch {
-  width: 2vw;
-  height: 3.7vh;
-  margin-left: 50.7vw;
-  margin-top: 41.2vh;
-  position: absolute;
-  animation: ttv 1s ease-in-out infinite alternate;
-  
-}
-#bitcoin {
-  width: 2.1vw;
-  height: 3.7vh;
-  margin-left: 24.31vw;
-  margin-top: 20.5vh;
-  position: absolute;
-  animation: btc 1s ease-in-out infinite alternate;
- 
-}
-#youtube {
-  width: 2vw;
-  height: 3.7vh;
-  margin-left: 46.5vw;
-  margin-top: 41vh;
-  position: absolute;
-  animation: yt 1s ease-in-out infinite alternate;
- 
-}
-#bio {
-  margin-left: 45%;
-  margin-top: 41vh;
-  font-family:monospace;
-  font-size: 1.25vw;
-  position: absolute;
-  animation: user 1s ease-in-out infinite alternate;
-}
-#body {
-  background-color: #000;
-}
-#popup {
-  
-  top: 95vh;
-  left: 95vw;
-  transform: translate(-50%, -50%);
-  background-color:#000;
-  z-index: 1;
-  padding: 100%;
-  height:100%;
-  width:100%;
-  opacity: 100%;
- 
-}
-#vidauto {
-  position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);}
-/* Style buttons */
-#button {
-  background-color: transparent;
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-  font-family: 'OCR A Std', sans-serif;
-   position: absolute;
-  top: 95vh;
-  left: 95vw;
   transform: translate(-50%, -50%);
-  z-index: 1;
-  height:100%;
-  width:100%;
-}
-@media screen and (max-width: 640px) {
-  #button {
-    margin-left: 5vw; /* Adjust as needed for smaller screens */
-    margin-top: 5vh; /* Adjust as needed for smaller screens */
-    font-size: 2.5vw; /* Adjust font size for smaller screens */
-  }
+  font-size: clamp(28px, 4vw, 60px);
+  color: black;
+  font-family: 'yulong', sans-serif;
+  animation: glow 1s infinite alternate;
 }
 
-/* Darker background on mouse-over */
-#btn:hover {
-  background-color: transparent
+/* ICONS */
+.icons {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: clamp(20px, 3vw, 50px);
 }
-.copy-bttn {
+
+.icons img {
+  width: clamp(25px, 2.5vw, 45px);
+  cursor: pointer;
+  animation: float 1s infinite alternate;
+}
+
+/* POPUP */
+#popup {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* ENTER TEXT */
+.enter {
+  color: white;
+  font-size: clamp(14px, 2vw, 22px);
+  animation: glow 1s infinite alternate;
+}
+
+/* FULL CLICK AREA */
+#button {
+  position: absolute;
+  inset: 0;
+  background: transparent;
   border: none;
-  background: none;
-}
-
-.copy-bttn img {
-  width: 30px; /* Adjust as needed */
-  height: auto;
   cursor: pointer;
 }
-#btcc {
-  visibility: hidden;
-  color: #fff;
-  background-color: transparent;
-  min-width: 250px;
-  margin-left: -137px;
-  padding: 16px;
-  text-align: center;
-  left: 50%;
-  bottom: 30px;
-  z-index: 1;
-  position: fixed;
+
+/* FADE-IN CONTENT */
+.hidden {
+  opacity: 0;
 }
 
-/* This will be activated when the snackbar's class is 'show' which will be added through JS */
-#btcc.show {
-  visibility: visible;
-  -moz-animation-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  font-family: 'yulong', sans-serif;
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #000;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #000;
+  }
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+@keyframes noiseMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-10%, -10%); }
+}
+
+/* MOBILE FIXES */
+@media (max-width: 600px) {
+  #username {
+    top: 35%;
+  }
+
+  .icons {
+    top: 50%;
+  }
 }
