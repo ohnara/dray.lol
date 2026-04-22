@@ -1,85 +1,126 @@
-/* BODY */
+/* =========================
+   ANIMATION (FIXED)
+========================= */
+@keyframes user {
+  from {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 8px #000,
+      0 0 11px #fff,
+      0 0 14px #000,
+      0 0 17px #fff,
+      0 0 20px #000;
+  }
+  to {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 15px #000,
+      0 0 20px #fff;
+  }
+}
+
+/* =========================
+   RESET (CLEANED — NO DUPES)
+========================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, img, strong, b, u, i,
+ol, ul, li,
+fieldset, form, label,
+table, tr, th, td,
+article, aside, footer, header, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
 body {
+  font-family: Arial, sans-serif;
+  line-height: 1;
   background: black;
-  overflow: hidden;
-  font-family: 'OCR A Std', sans-serif;
+  overflow-x: hidden; /* FIX: stops mobile breaking */
 }
 
-/* BACKGROUND */
+/* =========================
+   BACKGROUND (UNCHANGED LOOK)
+========================= */
 #bk {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -2;
-
-  /* 🔥 RESTORED LOOK */
-  filter: brightness(60%) blur(2px);
+  filter: brightness(100%);
 }
 
-/* NOISE OVERLAY */
-#noise {
-  position: fixed;
-  inset: 0;
-  background: url("MP4/dot.png");
-  opacity: 0.25;
+#dot {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -1;
-  animation: noiseMove 0.3s infinite;
+  opacity: 1;
+  background: url(MP4/dot.png) repeat;
 }
 
-/* USERNAME (MATCH YOUR POSITION BETTER) */
+/* =========================
+   USERNAME (UNCHANGED STYLE)
+========================= */
 #username {
   position: absolute;
-  top: 35vh;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(24px, 3vw, 48px);
+  margin-left: 47.5vw;
+  margin-top: 35vh;
   font-family: 'yulong', sans-serif;
-  color: black;
-  animation: glow 1s infinite alternate;
+  font-size: 3vw;
+  color: #000;
   white-space: nowrap;
+  animation: user 1s ease-in-out infinite alternate;
 }
 
-/* ICONS — MANUAL POSITIONING (LIKE YOUR ORIGINAL) */
-#twitch, #youtube {
-  position: absolute;
-  width: clamp(22px, 2vw, 40px);
-  height: auto;
-  animation: float 1s infinite alternate;
-}
-
-/* restore your spacing feel */
+/* =========================
+   ICONS (UNCHANGED FEEL)
+========================= */
 #twitch {
-  top: 41vh;
-  left: 52vw;
+  width: 2vw;
+  height: auto;
+  margin-left: 50.7vw;
+  margin-top: 41.2vh;
+  position: absolute;
+  animation: ttv 1s ease-in-out infinite alternate;
 }
 
 #youtube {
-  top: 41vh;
-  left: 47vw;
+  width: 2vw;
+  height: auto;
+  margin-left: 46.5vw;
+  margin-top: 41vh;
+  position: absolute;
+  animation: yt 1s ease-in-out infinite alternate;
 }
 
-/* POPUP */
+#bitcoin {
+  width: 2.1vw;
+  height: auto;
+  margin-left: 24.31vw;
+  margin-top: 20.5vh;
+  position: absolute;
+  animation: btc 1s ease-in-out infinite alternate;
+}
+
+/* =========================
+   POPUP (FIXED — THIS WAS BROKEN)
+========================= */
 #popup {
   position: fixed;
   inset: 0;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease;
 }
 
-.enter {
-  color: white;
-  font-size: clamp(14px, 2vw, 20px);
-  font-family: 'OCR A Std', sans-serif;
-  animation: glow 1s infinite alternate;
-}
-
-/* BUTTON */
+/* FULL SCREEN CLICK AREA */
 #button {
   position: absolute;
   inset: 0;
@@ -88,54 +129,57 @@ body {
   cursor: pointer;
 }
 
-/* ANIMATIONS */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #000;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #000;
-  }
+/* =========================
+   VIDEO FIXED POSITION (if still used)
+========================= */
+#vidauto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-5px); }
+/* =========================
+   COPY BUTTON (UNCHANGED)
+========================= */
+.copy-bttn {
+  border: none;
+  background: none;
 }
 
-@keyframes noiseMove {
-  from { transform: translate(0,0); }
-  to { transform: translate(-10%, -10%); }
+.copy-bttn img {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
 }
 
-/* 📱 MOBILE FIX WITHOUT BREAKING YOUR LAYOUT */
-@media (max-width: 600px) {
-  #username {
-    top: 30vh;
-    font-size: 6vw;
-  }
-
-  #twitch {
-    top: 42vh;
-    left: 55vw;
-  }
-
-  #youtube {
-    top: 42vh;
-    left: 40vw;
-  }
-}
-/* STOP MOBILE SIDE SCROLL */
-body {
-  overflow-x: hidden;
+/* =========================
+   TOAST MESSAGE
+========================= */
+#btcc {
+  visibility: hidden;
+  color: #fff;
+  background: transparent;
+  min-width: 250px;
+  padding: 16px;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
-/* SMOOTHER ANIMATION */
-.enter, #username {
-  animation: user 1.5s ease-in-out infinite alternate;
+/* FIXED ANIMATION SYNTAX */
+#btcc.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  font-family: 'yulong', sans-serif;
 }
 
-/* MOBILE ADJUSTMENTS (keeps your layout style) */
+/* =========================
+   MOBILE FIX (MINIMAL CHANGE ONLY)
+========================= */
 @media screen and (max-width: 640px) {
 
   #username {
@@ -154,5 +198,4 @@ body {
   #bitcoin {
     margin-left: 20vw;
   }
-
 }
