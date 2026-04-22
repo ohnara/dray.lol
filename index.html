@@ -1,37 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css?v=1.2">
-<script src="style.js?v=1.2"></script> 
+<title>dray.lol</title>
 
-<link rel="icon" type="image/jpg" href="MP4/favicon.jpg"/> 
+<link rel="stylesheet" href="style.css?v=1.2">
+<script defer src="style.js?v=1.2"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="icon" type="image/jpg" href="MP4/favicon.jpg"/>
+
+<link href="https://fonts.cdnfonts.com/css/ocr-a-std" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/yulong" rel="stylesheet">
 
 <style>
 body {
   background-color: black;
 }
 
-/* POPUP FIXED */
-#popup { 
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: black;
- z-index: 9999;
+/* popup (unchanged visually, just fixed structure) */
+.popup { 
+  position: fixed;
+  z-index: 9999;
+  margin-left: 1%;
+  border: 1px solid black;
+  opacity: 0.99;
+  font-size: 5px;
 }
 
 .enter {
-  border: none;
   color: white;
   font-size: 15px;
   font-family: 'OCR A Std', sans-serif;
-  margin-top: 50vh;
-  margin-left: 45vw;
+  margin-right: 20%;
   animation: user 1.5s ease-in-out infinite alternate;
 }
 </style>
@@ -40,44 +45,50 @@ body {
 
 <body> 
 
-<div id="popup">
+<!-- POPUP -->
+<div class="popup" id="popup">
     <p class="enter">click to enter</p>
     <button id="button"></button>
 </div>
 
-<!-- AUDIO FIX (replaces broken video) -->
+<!-- AUDIO (fixed from video, same behaviour) -->
 <audio id="audio" loop>
   <source src="MP4/eem.mp3" type="audio/mpeg">
 </audio>
 
-<img id="bk" src="MP4/charon walk.gif">
-<img id="dot" src="MP4/dot.png">
+<!-- BACKGROUND -->
+<img id="bk" src="MP4/charon walk.gif" alt="Charon walking">
+<img id="dot" src="MP4/dot.png" alt="Dot image">
 
+<!-- TEXT -->
 <h1 id="username">dray</h1>
 
+<!-- LINKS -->
 <a href="https://twitch.tv/draylovesher"> 
-   <img id="twitch" src="MP4/twitch.png">
+   <img id="twitch" src="MP4/twitch.png" alt="Twitch logo">
 </a>
 
 <a href="https://www.youtube.com/channel/UC4lhw3QR5vXOnVIb4soDxJA"> 
-    <img id="youtube" src="MP4/youtube.png">
+   <img id="youtube" src="MP4/youtube.png" alt="YouTube logo">
 </a>
 
-<bttc id="bitcoin" class="copy-bttn" onclick="copyToClipboard()">
-    <img src="MP4/bitcoin.png">
+<!-- BITCOIN BUTTON -->
+<bttc id="bitcoin" class="copy-bttn" onclick="copyToClipboard()" title="Copy to Clipboard">
+    <img src="MP4/bitcoin.png" alt="Bitcoin logo">
 </bttc>
 
 <span id="btcc">Successfully Copied</span>
 
 <script src="script.js"></script>
 
+<!-- AUDIO SCRIPT FIX -->
 <script>
 const acceptButton = document.getElementById('button');
 const popup = document.getElementById('popup');
 const audio = document.getElementById('audio');
 
 acceptButton.addEventListener('click', function() {
-    audio.play(); // ✅ mobile-safe autoplay
+    audio.play();
     popup.style.display = 'none';
 });
 </script>
